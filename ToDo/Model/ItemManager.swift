@@ -9,8 +9,10 @@
 import Foundation
 
 class ItemManager {
+    
     var toDoCount: Int { return toDoItems.count }
     var doneCount: Int { return doneItems.count }
+    
     private var toDoItems: [ToDoItem] = []
     private var doneItems: [ToDoItem] = []
     

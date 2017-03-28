@@ -14,11 +14,9 @@ class LocationTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
@@ -30,7 +28,6 @@ class LocationTests: XCTestCase {
     func test_WhenGivenCoordinate_SetsCoordinate() {
         let coordinate = CLLocationCoordinate2D(latitude: 1, longitude: 2)
         let location = Location(name: "", coordinate: coordinate)
-        
         XCTAssertEqual(location.coordinate?.latitude, coordinate.latitude)
         XCTAssertEqual(location.coordinate?.longitude, coordinate.longitude)
     }
@@ -44,7 +41,7 @@ class LocationTests: XCTestCase {
     func test_Locations_WhenLatitudeDiffers_AreNotEqual() {
         let first = Location(name: "Foo", coordinate: CLLocationCoordinate2D(latitude: 1.0, longitude: 0.0))
         let second = Location(name: "Foo", coordinate: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))
-    XCTAssertNotEqual(first, second)
+        XCTAssertNotEqual(first, second)
     }
     
     func test_Locations_WhenLongitudeDiffers_AreNotEqual() {
