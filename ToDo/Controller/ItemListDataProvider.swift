@@ -13,7 +13,12 @@ enum Section: Int {
     case done
 }
 
+@objc protocol ItemManagerSettable {
+    var itemManager: ItemManager? { get set }
+}
+
 class ItemListDataProvider: NSObject,
+                            ItemManagerSettable,
                             UITableViewDataSource,
                             UITableViewDelegate {
     
@@ -48,9 +53,24 @@ class ItemListDataProvider: NSObject,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
 
-        if let item = itemManager?.item(at: indexPath.row) {
-            cell.configCell(with: item)
+        guard let itemManager = itemManager else {
+            fatalError()
         }
+        
+        guard let section = Section(rawValue: indexPath.section) else {
+            fatalError()
+        }
+        
+        let item: ToDoItem
+        
+        switch section {
+        case .toDo:
+            item = itemManager.item(at: indexPath.row)
+        case .done:
+            item = itemManager.doneItem(at: indexPath.row)
+        }
+        
+        cell.configCell(with: item)
         
         return cell
     }
