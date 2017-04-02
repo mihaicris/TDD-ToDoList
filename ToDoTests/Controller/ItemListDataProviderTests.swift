@@ -27,6 +27,7 @@ class ItemListDataProviderTests: XCTestCase {
         
         tableView = controller.tableView
         tableView.dataSource = sut
+        tableView.delegate = sut
     }
     
     override func tearDown() {
@@ -106,6 +107,46 @@ class ItemListDataProviderTests: XCTestCase {
         XCTAssertEqual(cell.catchedItem, second)
     }
     
+    
+    func test_DeleteButton_InFirstSection_ShowsTitleCheck() {
+        
+        let deleteButtonTitle = tableView.delegate?.tableView?(tableView, titleForDeleteConfirmationButtonForRowAt: IndexPath(row: 0, section: 0))
+    
+        XCTAssertEqual(deleteButtonTitle, "Check")
+    }
+    
+    func test_DeleteButton_InSecondSection_ShowsTitleUncheck() {
+        
+        let deleteButtonTitle = tableView.delegate?.tableView?(tableView, titleForDeleteConfirmationButtonForRowAt: IndexPath(row: 0, section: 1))
+        
+        XCTAssertEqual(deleteButtonTitle, "Uncheck")
+    }
+    
+    func test_CheckingAnItem_ChecksItInTheItemManager() {
+        sut.itemManager?.add(ToDoItem(title: "Foo"))
+        
+        tableView.dataSource?.tableView?(tableView, commit: .delete, forRowAt: IndexPath(row: 0, section: 0))
+        
+        XCTAssertEqual(sut.itemManager?.toDoCount, 0)
+        XCTAssertEqual(sut.itemManager?.doneCount, 1)
+        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 0)
+        XCTAssertEqual(tableView.numberOfRows(inSection: 1), 1)
+        
+    }
+    
+    func test_UncheckingAnItem_UnchecksItInTheItemManager() {
+        sut.itemManager?.add(ToDoItem(title: "Foo"))
+        sut.itemManager?.checkItem(at: 0)
+        tableView.reloadData()
+        
+        tableView.dataSource?.tableView?(tableView, commit: .delete, forRowAt: IndexPath(row: 0, section: 1))
+        
+        XCTAssertEqual(sut.itemManager?.toDoCount, 1)
+        XCTAssertEqual(sut.itemManager?.doneCount, 0)
+        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 1)
+        XCTAssertEqual(tableView.numberOfRows(inSection: 1), 0)
+        
+    }
 }
 
 extension ItemListDataProviderTests {
