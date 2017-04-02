@@ -25,8 +25,13 @@ class ItemListDataProvider: NSObject,
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        guard let itemManager = itemManager else { return 0 }
-        guard let itemSection = Section(rawValue: section) else { fatalError() }
+        guard let itemManager = itemManager else {
+            return 0
+        }
+        
+        guard let itemSection = Section(rawValue: section) else {
+            fatalError()
+        }
         
         let numberOfRows: Int
         

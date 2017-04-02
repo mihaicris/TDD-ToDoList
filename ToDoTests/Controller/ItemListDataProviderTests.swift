@@ -99,9 +99,8 @@ extension ItemListDataProviderTests {
     
         var cellGotDequeued = false
         
-        override func dequeueReusableCell(
-            withIdentifier identifier: String,
-            for indexPath: IndexPath) -> UITableViewCell {
+        override func dequeueReusableCell( withIdentifier identifier: String,
+                                           for indexPath: IndexPath) -> UITableViewCell {
                 cellGotDequeued = true
                 return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         }
