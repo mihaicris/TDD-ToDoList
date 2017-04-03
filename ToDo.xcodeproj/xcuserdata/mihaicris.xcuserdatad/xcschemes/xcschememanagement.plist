@@ -4,13 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>-[LocationTests test_WhenGivenCoordinate_SetsCoordinate].xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
 		<key>Test.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -27,17 +20,17 @@
 		<key>830A7D7A1E90DAEE00BAC5EB</key>
 		<dict>
 			<key>primary</key>
-			<true/>
+			<true />
 		</dict>
 		<key>8354E6771E899FFB00B7DEC0</key>
 		<dict>
 			<key>primary</key>
-			<true/>
+			<true />
 		</dict>
 		<key>8354E68B1E899FFB00B7DEC0</key>
 		<dict>
 			<key>primary</key>
-			<true/>
+			<true />
 		</dict>
 	</dict>
 </dict>

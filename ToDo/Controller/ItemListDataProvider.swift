@@ -91,6 +91,7 @@ class ItemListDataProvider: NSObject,
         
         return buttonTitle
     }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         guard let itemManager = itemManager else {

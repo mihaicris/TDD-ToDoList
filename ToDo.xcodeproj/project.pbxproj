@@ -31,6 +31,7 @@
 		E5832372CEDEABC79AE707EE /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58329438540F4E1F2CB4FBF /* ToDoItem.swift */; };
 		E58324EEFC025E1FC0D5760A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E583239225F183FFD01C4716 /* Location.swift */; };
 		E5832575B1E096730522A497 /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58329348F88958A77C23812 /* ItemManager.swift */; };
+		E5832D86D0EDADE6CEA51FF1 /* ItemCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5832A0B11A7627DD2BDECF9 /* ItemCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		E583239225F183FFD01C4716 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Model/Location.swift; sourceTree = "<group>"; };
 		E58329348F88958A77C23812 /* ItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemManager.swift; path = Model/ItemManager.swift; sourceTree = "<group>"; };
 		E58329438540F4E1F2CB4FBF /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToDoItem.swift; path = Model/ToDoItem.swift; sourceTree = "<group>"; };
+		E5832A0B11A7627DD2BDECF9 /* ItemCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCellTests.swift; path = ToDo/ItemCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,16 +95,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8338851C1E9139F10075C7BA /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				8338851E1E913A300075C7BA /* APIClientTests.swift */,
-				833885201E913A8B0075C7BA /* APIClient.swift */,
-			);
-			name = Services;
-			sourceTree = "<group>";
-		};
-		8354E66F1E899FFB00B7DEC0 = {
+		832CF75E1E923127008AFDB8 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
 				8354E6821E899FFB00B7DEC0 /* Assets.xcassets */,
@@ -113,7 +106,42 @@
 				E58326AEBEE99E409DD71CA8 /* Model */,
 				8354E6791E899FFB00B7DEC0 /* Products */,
 				83A8953A1E90FAB600FD62B2 /* Storyboard */,
-				83A8953B1E90FCEB00FD62B2 /* Target */,
+				8354E6871E899FFB00B7DEC0 /* ToDo.plist */,
+			);
+			name = ToDo;
+			sourceTree = "<group>";
+		};
+		832CF75F1E92312E008AFDB8 /* ToDoTests */ = {
+			isa = PBXGroup;
+			children = (
+				8338851E1E913A300075C7BA /* APIClientTests.swift */,
+				83A895371E90FA0A00FD62B2 /* DetailViewControllerTests.swift */,
+				833885181E9119D40075C7BA /* InputViewControllerTests.swift */,
+				E5832A0B11A7627DD2BDECF9 /* ItemCellTests.swift */,
+				83ED761E1E8A9E6700E85E80 /* ItemListDataProviderTests.swift */,
+				83ED76121E8A8D3C00E85E80 /* ItemListViewControllerTests.swift */,
+				83DCEDD01E89AE5000FB164F /* ItemManagerTests.swift */,
+				83DCEDCE1E89AB3C00FB164F /* LocationTests.swift */,
+				833885241E91596B0075C7BA /* StoryboardTests.swift */,
+				8354E69B1E89A18500B7DEC0 /* ToDoItemTests.swift */,
+				8354E6921E899FFB00B7DEC0 /* ToDoTests.plist */,
+			);
+			name = ToDoTests;
+			sourceTree = "<group>";
+		};
+		8338851C1E9139F10075C7BA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				833885201E913A8B0075C7BA /* APIClient.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		8354E66F1E899FFB00B7DEC0 = {
+			isa = PBXGroup;
+			children = (
+				832CF75E1E923127008AFDB8 /* ToDo */,
+				832CF75F1E92312E008AFDB8 /* ToDoTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,18 +159,8 @@
 			children = (
 				8354E6841E899FFB00B7DEC0 /* LaunchScreen.storyboard */,
 				8354E67F1E899FFB00B7DEC0 /* Main.storyboard */,
-				833885241E91596B0075C7BA /* StoryboardTests.swift */,
 			);
 			name = Storyboard;
-			sourceTree = "<group>";
-		};
-		83A8953B1E90FCEB00FD62B2 /* Target */ = {
-			isa = PBXGroup;
-			children = (
-				8354E6921E899FFB00B7DEC0 /* ToDoTests.plist */,
-				8354E6871E899FFB00B7DEC0 /* ToDo.plist */,
-			);
-			name = Target;
 			sourceTree = "<group>";
 		};
 		83A8953C1E90FD0300FD62B2 /* App Delegate */ = {
@@ -165,14 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				83ED76201E8AA62400E85E80 /* ItemCell.swift */,
-				83ED76181E8A925500E85E80 /* ItemListDataProvider.swift */,
-				83ED761E1E8A9E6700E85E80 /* ItemListDataProviderTests.swift */,
 				83ED76191E8A925500E85E80 /* ItemListViewController.swift */,
-				83ED76121E8A8D3C00E85E80 /* ItemListViewControllerTests.swift */,
 				8338851A1E911A8D0075C7BA /* InputViewController.swift */,
-				833885181E9119D40075C7BA /* InputViewControllerTests.swift */,
 				83A895421E910CD900FD62B2 /* DetailViewController.swift */,
-				83A895371E90FA0A00FD62B2 /* DetailViewControllerTests.swift */,
 			);
 			name = Controller;
 			path = ToDo;
@@ -183,11 +196,9 @@
 			children = (
 				833885221E913D5C0075C7BA /* Token.swift */,
 				E58329348F88958A77C23812 /* ItemManager.swift */,
-				83DCEDD01E89AE5000FB164F /* ItemManagerTests.swift */,
+				83ED76181E8A925500E85E80 /* ItemListDataProvider.swift */,
 				E583239225F183FFD01C4716 /* Location.swift */,
-				83DCEDCE1E89AB3C00FB164F /* LocationTests.swift */,
 				E58329438540F4E1F2CB4FBF /* ToDoItem.swift */,
-				8354E69B1E89A18500B7DEC0 /* ToDoItemTests.swift */,
 			);
 			name = Model;
 			path = ToDo;
@@ -329,6 +340,7 @@
 				833885251E91596B0075C7BA /* StoryboardTests.swift in Sources */,
 				8354E69C1E89A18500B7DEC0 /* ToDoItemTests.swift in Sources */,
 				83A895381E90FA0A00FD62B2 /* DetailViewControllerTests.swift in Sources */,
+				E5832D86D0EDADE6CEA51FF1 /* ItemCellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
