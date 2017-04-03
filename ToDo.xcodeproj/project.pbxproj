@@ -106,7 +106,6 @@
 				E58326AEBEE99E409DD71CA8 /* Model */,
 				8354E6791E899FFB00B7DEC0 /* Products */,
 				83A8953A1E90FAB600FD62B2 /* Storyboard */,
-				8354E6871E899FFB00B7DEC0 /* ToDo.plist */,
 			);
 			name = ToDo;
 			sourceTree = "<group>";
@@ -124,7 +123,6 @@
 				83DCEDCE1E89AB3C00FB164F /* LocationTests.swift */,
 				833885241E91596B0075C7BA /* StoryboardTests.swift */,
 				8354E69B1E89A18500B7DEC0 /* ToDoItemTests.swift */,
-				8354E6921E899FFB00B7DEC0 /* ToDoTests.plist */,
 			);
 			name = ToDoTests;
 			sourceTree = "<group>";
@@ -140,6 +138,7 @@
 		8354E66F1E899FFB00B7DEC0 = {
 			isa = PBXGroup;
 			children = (
+				837F19B81E96220A00C012AA /* Config */,
 				832CF75E1E923127008AFDB8 /* ToDo */,
 				832CF75F1E92312E008AFDB8 /* ToDoTests */,
 			);
@@ -152,6 +151,15 @@
 				8354E68C1E899FFB00B7DEC0 /* ToDoTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		837F19B81E96220A00C012AA /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				8354E6871E899FFB00B7DEC0 /* ToDo.plist */,
+				8354E6921E899FFB00B7DEC0 /* ToDoTests.plist */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 		83A8953A1E90FAB600FD62B2 /* Storyboard */ = {
