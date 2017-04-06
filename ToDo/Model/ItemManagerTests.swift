@@ -106,5 +106,7 @@ class ItemManagerTests: XCTestCase {
         XCTAssertEqual(itemManager?.toDoCount, 2)
         XCTAssertEqual(itemManager?.item(at: 0), firstItem)
         XCTAssertEqual(itemManager?.item(at: 1), secondItem)
+
+        itemManager?.removeAll()
     }
 }
