@@ -103,6 +103,23 @@ class ItemListViewControllerTests: XCTestCase {
         XCTAssertTrue(sut.itemManager === inputItemManager)
     }
     
+    func test_Save_DismissesViewController() {
+        
+        let mockInputViewController = MockInputViewController()
+        mockInputViewController.titleTextField = UITextField()
+        mockInputViewController.dateTextField = UITextField()
+        mockInputViewController.locationTextField = UITextField()
+        mockInputViewController.addressTextField = UITextField()
+        mockInputViewController.descriptionTextField = UITextField()
+        mockInputViewController.titleTextField.text = "Test Title"
+        
+        mockInputViewController.save()
+        
+        XCTAssertTrue(mockInputViewController.dismissGotCalled)
+        
+    }
+    
+    
     func test_ViewDidLoad_SetsItemManagerToDataProvider() {
         XCTAssertTrue(sut.itemManager === sut.dataProvider.itemManager)
     }
@@ -132,5 +149,15 @@ extension ItemListViewControllerTests {
             tableViewHasReloaded = true
         }
     }
+    
+    class MockInputViewController: InputViewController {
+        
+        var dismissGotCalled = false
+        
+        override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+            dismissGotCalled = true
+        }
+    }
+    
 }
 
