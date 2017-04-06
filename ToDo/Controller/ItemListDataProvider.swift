@@ -92,6 +92,21 @@ class ItemListDataProvider: NSObject,
         return buttonTitle
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let itemSection = Section(rawValue: indexPath.section) else {
+            fatalError()
+        }
+        
+        switch itemSection {
+        case .toDo:
+            NotificationCenter.default.post(name: Notification.Name("ItemSelectedNotification"),
+                                            object: self,
+                                            userInfo: ["index": indexPath.row])
+        default:
+            break
+        }
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         guard let itemManager = itemManager else {
