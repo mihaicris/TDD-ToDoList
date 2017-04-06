@@ -73,6 +73,7 @@ class DetailViewControllerTests: XCTestCase {
     
     func test_CheckItem_ChecksItemInItemManager() {
         let itemManager = ItemManager()
+        itemManager.removeAll()
         itemManager.add(ToDoItem(title: "Foo"))
         sut.itemInfo = (itemManager, 0)
         sut.checkItem()

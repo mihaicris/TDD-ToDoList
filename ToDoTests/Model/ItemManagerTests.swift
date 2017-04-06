@@ -16,6 +16,7 @@ class ItemManagerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         sut = ItemManager()
+        sut.removeAll()
     }
     
     override func tearDown() {
@@ -86,6 +87,7 @@ class ItemManagerTests: XCTestCase {
     
     func test_ToDoItemsGetSerialized() {
         var itemManager: ItemManager? = ItemManager()
+        itemManager?.removeAll()
         
         let firstItem = ToDoItem(title: "Foo")
         itemManager!.add(firstItem)

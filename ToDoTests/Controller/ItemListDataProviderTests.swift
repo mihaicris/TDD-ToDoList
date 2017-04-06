@@ -19,6 +19,7 @@ class ItemListDataProviderTests: XCTestCase {
         super.setUp()
         sut = ItemListDataProvider()
         sut.itemManager = ItemManager()
+        sut.itemManager?.removeAll()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
