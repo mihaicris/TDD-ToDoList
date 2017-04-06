@@ -69,9 +69,8 @@ class ItemListDataProvider: NSObject,
         case .done:
             item = itemManager.doneItem(at: indexPath.row)
         }
-        
-        cell.configCell(with: item)
-        
+
+        cell.configCell(with: item, checked: section == .done)
         return cell
     }
     

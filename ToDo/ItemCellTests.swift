@@ -51,7 +51,7 @@ class ItemCellTests: XCTestCase {
     func test_ConfigCell_SetsLabelTexts() {
         let location = Location(name: "Bar")
         let item = ToDoItem(title: "Foo", itemDescription: nil, timestamp: 1456150025, location: location)
-        cell.configCell(with: item)
+        cell.configCell(with: item, checked: false)
         
         XCTAssertEqual(cell.titleLabel.text, "Foo")
         XCTAssertEqual(cell.locationLabel.text, "Bar")

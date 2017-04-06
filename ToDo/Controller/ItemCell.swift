@@ -20,12 +20,13 @@ class ItemCell: UITableViewCell {
         return df
     }()
     
-    func configCell(with item: ToDoItem, checked: Bool = false) {
+    func configCell(with item: ToDoItem, checked: Bool) {
         
         if checked {
-            let attributedString =
-                NSAttributedString(string: item.title,
-                                   attributes: [NSStrikethroughStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
+            let attributedString = NSAttributedString(
+                string: item.title,
+                attributes: [NSStrikethroughStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue]
+            )
             titleLabel.attributedText = attributedString
             locationLabel.text = nil
             dateLabel.text = nil
