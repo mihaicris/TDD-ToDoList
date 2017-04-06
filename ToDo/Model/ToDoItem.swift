@@ -23,6 +23,10 @@ struct ToDoItem: Equatable {
         self.timestamp = timestamp
         self.location = location
     }
+    
+    var plistDict: String {
+        return ""
+    }
 }
 
 func ==(lhs: ToDoItem, rhs: ToDoItem) -> Bool {

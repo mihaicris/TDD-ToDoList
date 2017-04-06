@@ -144,11 +144,14 @@ class ItemListViewControllerTests: XCTestCase {
         
         UIApplication.shared.keyWindow?.rootViewController = mockNavigationViewController
         
+        sut.itemManager.add(ToDoItem(title: "Foo"))
+        
         _ = sut.view
+        
         
         NotificationCenter.default.post(name: Notification.Name("ItemSelectedNotification"),
                                         object: self,
-                                        userInfo: ["index": 1])
+                                        userInfo: ["index": 0])
         
         guard let detailViewController = mockNavigationViewController.pushedViewController as? DetailViewController else {
             XCTFail()
@@ -169,7 +172,7 @@ class ItemListViewControllerTests: XCTestCase {
         
         XCTAssertNotNil(detailViewController.titleLabel)
         XCTAssertTrue(detailItemManager === sut.itemManager)
-        XCTAssertEqual(index, 1)
+        XCTAssertEqual(index, 0)
     }
 }
 

@@ -16,6 +16,7 @@ class ItemListViewController: UIViewController {
     let itemManager = ItemManager()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         tableView.dataSource = dataProvider
         tableView.delegate = dataProvider
         dataProvider.itemManager = itemManager
@@ -23,7 +24,6 @@ class ItemListViewController: UIViewController {
                                                selector: #selector(showDetails(sender:)),
                                                name: Notification.Name("ItemSelectedNotification"),
                                                object: nil)
-        super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
