@@ -45,7 +45,9 @@ class InputViewController: UIViewController {
         let descriptionString = descriptionTextField.text
         
         if let locationName = locationTextField.text, locationName.characters.count > 0 {
+            
             if let address = addressTextField.text, address.characters.count > 0 {
+            
                 geocoder.geocodeAddressString(address) { [unowned self] (placemarks, error) -> Void in
                     
                     let placeMark = placemarks?.first
@@ -55,7 +57,10 @@ class InputViewController: UIViewController {
                                         timestamp: date?.timeIntervalSince1970,
                                         location: Location(name: locationName, coordinate: placeMark?.location?.coordinate))
                     
-                    self.itemManager?.add(item)
+                    DispatchQueue.main.async {
+                        self.itemManager?.add(item)
+                        self.dismiss(animated: true)
+                    }
                 }
             }
         } else {
@@ -65,8 +70,7 @@ class InputViewController: UIViewController {
                                 location: nil)
     
             self.itemManager?.add(item)
+            dismiss(animated: true)
         }
-        
-        dismiss(animated: true)
     }
 }
