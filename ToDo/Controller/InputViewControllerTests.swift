@@ -34,7 +34,7 @@ class InputViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.addressTextField)
         XCTAssertNotNil(sut.descriptionTextField)
         XCTAssertNotNil(sut.saveButton)
-        XCTAssertNotNil(sut.cancellButton)
+        XCTAssertNotNil(sut.cancelButton)
     }
 
     func test_Save_UsesGeocoderToGetCoordinateFromAddress() {
@@ -140,6 +140,32 @@ class InputViewControllerTests: XCTestCase {
         XCTAssertTrue(mockInputViewController.dismissGotCalled)
     }
 
+    func test_CancelButton_HasCancelAction() {
+        let cancelButton: UIButton = sut.cancelButton
+
+        guard let actions = cancelButton.actions(forTarget: sut, forControlEvent: .touchUpInside) else {
+            XCTFail()
+            return
+        }
+
+        XCTAssertTrue(actions.contains("cancel"))
+    }
+
+    func test_Cancel_DismissesInputViewCOntroller() {
+
+        let mockInputViewController = MockInputViewController()
+
+        mockInputViewController.titleTextField = UITextField()
+        mockInputViewController.dateTextField = UITextField()
+        mockInputViewController.locationTextField = UITextField()
+        mockInputViewController.addressTextField = UITextField()
+        mockInputViewController.descriptionTextField = UITextField()
+        mockInputViewController.titleTextField.text = "Test Title"
+
+        mockInputViewController.cancel()
+
+        XCTAssertTrue(mockInputViewController.dismissGotCalled)
+    }
 }
 
 extension InputViewControllerTests {

@@ -234,9 +234,12 @@
                                             <action selector="save" destination="pdh-V4-hIh" eventType="touchUpInside" id="cWc-eb-ILD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rC5-ta-SLu">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rC5-ta-SLu" userLabel="Cancel Button">
                                         <rect key="frame" x="134" y="0.0" width="48" height="30"/>
                                         <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancel" destination="pdh-V4-hIh" eventType="touchUpInside" id="geU-Eu-vvd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -269,7 +272,7 @@
                     </view>
                     <connections>
                         <outlet property="addressTextField" destination="j5G-iF-5HL" id="LjD-2d-qQ2"/>
-                        <outlet property="cancellButton" destination="rC5-ta-SLu" id="qi7-j8-aCB"/>
+                        <outlet property="cancelButton" destination="rC5-ta-SLu" id="aUK-I5-uHH"/>
                         <outlet property="dateTextField" destination="3fb-Aw-bHF" id="aOM-TE-zpR"/>
                         <outlet property="descriptionTextField" destination="beR-vV-ZoC" id="jcv-ef-rws"/>
                         <outlet property="locationTextField" destination="KUN-Za-9Yf" id="eEF-j3-7y5"/>
