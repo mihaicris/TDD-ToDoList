@@ -23,6 +23,7 @@ class DetailViewControllerTests: XCTestCase {
     }
     
     override func tearDown() {
+        sut.itemInfo?.0.removeAll()
         super.tearDown()
     }
     
@@ -54,6 +55,7 @@ class DetailViewControllerTests: XCTestCase {
         let item = ToDoItem(title: "Bar", itemDescription: "Baz", timestamp: 1456150025, location: location)
         
         let itemManager = ItemManager()
+        itemManager.removeAll()
         
         itemManager.add(item)
         
