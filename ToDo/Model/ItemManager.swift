@@ -77,7 +77,7 @@ class ItemManager: NSObject {
         doneItems.removeAll()
     }
     
-    func save() {
+    @objc func save() {
         let nsToDoItems = toDoItems.map { $0.plistDict }
         
         guard !nsToDoItems.isEmpty else {

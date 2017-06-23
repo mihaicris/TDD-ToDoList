@@ -30,7 +30,7 @@ class ItemListViewController: UIViewController {
         tableView.reloadData()
     }
     
-    func showDetails(sender: Notification) {
+    @objc func showDetails(sender: Notification) {
     
         guard let index = sender.userInfo?["index"] as? Int else {
             fatalError()

@@ -153,7 +153,7 @@ class ItemListDataProviderTests: XCTestCase {
         let item = ToDoItem(title: "First")
         sut.itemManager?.add(item)
 
-        expectation(forNotification: "ItemSelectedNotification", object: nil) { (notification) -> Bool in
+        expectation(forNotification: NSNotification.Name(rawValue: "ItemSelectedNotification"), object: nil) { (notification) -> Bool in
             guard let index = notification.userInfo?["index"] as? Int else {
                 return false
             }

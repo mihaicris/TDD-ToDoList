@@ -66,7 +66,7 @@ class ItemCellTests: XCTestCase {
 
         let attributedString =
             NSAttributedString(string: "Foo",
-                               attributes: [NSStrikethroughStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
+                               attributes: [NSAttributedStringKey.strikethroughStyle: NSUnderlineStyle.styleSingle.rawValue])
 
         XCTAssertEqual(cell.titleLabel.attributedText, attributedString)
         XCTAssertNil(cell.locationLabel.text)
