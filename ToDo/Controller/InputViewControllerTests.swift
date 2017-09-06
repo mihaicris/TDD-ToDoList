@@ -116,8 +116,8 @@ class InputViewControllerTests: XCTestCase {
                 return
             }
 
-            XCTAssertEqualWithAccuracy(latitude, 37.3316, accuracy: 0.0001)
-            XCTAssertEqualWithAccuracy(longitude, -122.0300, accuracy: 0.001)
+            XCTAssertEqual(latitude, 37.3316, accuracy: 0.0001)
+            XCTAssertEqual(longitude, -122.0300, accuracy: 0.001)
 
             geodecoderAnswered.fulfill()
         }
