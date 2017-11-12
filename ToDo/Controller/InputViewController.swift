@@ -30,13 +30,13 @@ class InputViewController: UIViewController {
 
     @IBAction func save() {
 
-        guard let titleString = titleTextField.text, titleString.characters.count > 0 else {
+        guard let titleString = titleTextField.text, titleString.count > 0 else {
             return
         }
 
         let date: Date?
 
-        if let dateText = dateTextField.text, dateText.characters.count > 0 {
+        if let dateText = dateTextField.text, dateText.count > 0 {
             date = dateFormatter.date(from: dateText)
         } else {
             date = nil
@@ -44,9 +44,9 @@ class InputViewController: UIViewController {
 
         let descriptionString = descriptionTextField.text
 
-        if let locationName = locationTextField.text, locationName.characters.count > 0 {
+        if let locationName = locationTextField.text, locationName.count > 0 {
 
-            if let address = addressTextField.text, address.characters.count > 0 {
+            if let address = addressTextField.text, address.count > 0 {
 
                 geocoder.geocodeAddressString(address) { [unowned self] (placemarks, _) -> Void in
 
